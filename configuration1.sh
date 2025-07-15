@@ -1,10 +1,10 @@
 sudo apt update && sudo apt upgrade -y
-sudo apt install python-is-python3
+sudo apt install python-is-python3 -y
 
 # camera script setup
 sudo mkdir /logs
 mkdir -p /ALL-SKY-IMAGER/data
-sudo apt-get install bzip2
+sudo apt-get install bzip2 -y
 cd ALL-SKY-IMAGER/zwo
 tar -xvf ASI_linux_mac_SDK_V1.38.tar.bz2
 

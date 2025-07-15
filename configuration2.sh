@@ -1,0 +1,1 @@
+./ALL-SKY-IMAGER/clockmaker --build
