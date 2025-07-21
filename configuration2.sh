@@ -1,7 +1,7 @@
 user=$(whoami)
 
 # finish NTPsec setup
-sudo apt install scons gcc clang asciidoctor -y
+sudo apt install scons gcc clang asciidoctor m4 bison pkg-config libssl-dev -y
 
 chmod a+x /home/$user/ALL-SKY-IMAGER/clockmaker
 cd /home/$user/ALL-SKY-IMAGER/
