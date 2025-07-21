@@ -1,3 +1,4 @@
 #!/bin/bash
-cd ../zwo/
+user=$(whoami)
+cd /home/$user/ALL-SKY-IMAGER/zwo/
 python3 camrun.py
