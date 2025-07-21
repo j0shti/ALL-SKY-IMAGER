@@ -17,5 +17,5 @@ sudo apt install python3-smbus -y
 sudo apt install python3-pillow -y
 
 # NTPsec setup
-chmod a+x ALL-SKY-IMAGER/clockmaker
+sudo chmod a+x ALL-SKY-IMAGER/clockmaker
 sudo ./ALL-SKY-IMAGER/clockmaker --config
