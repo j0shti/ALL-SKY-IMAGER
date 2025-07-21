@@ -1,6 +1,8 @@
 user=$(whoami)
 
 # finish NTPsec setup
+sudo apt install scons gcc clang asciidoctor -y
+
 chmod a+x /home/$user/ALL-SKY-IMAGER/clockmaker
 cd /home/$user/ALL-SKY-IMAGER/
 ./clockmaker --build
