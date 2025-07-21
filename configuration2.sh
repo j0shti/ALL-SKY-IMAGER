@@ -1,7 +1,7 @@
 user=$(whoami)
 
 # finish NTPsec setup
-chmod a+x ALL-SKY-IMAGER/clockmaker
+chmod a+x /home/$user/ALL-SKY-IMAGER/clockmaker
 cd /home/$user/ALL-SKY-IMAGER/
 ./clockmaker --build
 
