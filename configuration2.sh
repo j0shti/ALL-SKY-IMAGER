@@ -10,11 +10,11 @@ cd /home/$user/ALL-SKY-IMAGER/
 # enable gps service
 cd /home/$user/ALL-SKY-IMAGER/gps_service/
 chmod a+x run_gps.sh
-chmod a+x startcam.sh
 
 # create systemd service ot autostart gps service
 sudo -s
 cd ../
+chmod a+x startcam.sh
 mv startcam.sh /
 mv autostart.service /etc/systemd/system
 cd /etc/systemd/system
