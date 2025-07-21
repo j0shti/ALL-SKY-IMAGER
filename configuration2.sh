@@ -20,6 +20,7 @@ mv autostart.service /etc/systemd/system
 cd /etc/systemd/system
 systemctl daemon-reload
 systemctl enable --now autostart.service
+exit
 
 # restart system
 echo "configuration complete--rebooting"
