@@ -6,8 +6,8 @@ MAX_SYNC_TIME=1200 # Time limit for checking the system time synchronization wit
 user="$(whoami)"
 
 LOG_PATH='/logs'
-ENV_PATH='/home/'$user'/ALL-SKY-IMAGER/zwo'
-PROGRAM=$ENV_PATH'autostartcam.sh'
+ENV_PATH='/home/'$user'/ALL-SKY-IMAGER/gps_service'
+PROGRAM=$ENV_PATH'startcam.sh'
 
 ST="$(date +%s)"
 
