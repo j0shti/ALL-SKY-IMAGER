@@ -2,7 +2,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python-is-python3 -y
 
 # camera script setup
-user = $(whoami)
+user=$(whoami)
 
 sudo mkdir /logs
 mkdir -p /home/$user/ALL-SKY-IMAGER/data
