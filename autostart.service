@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/gps_service/startgps.sh
+ExecStart=/gps_service/startgps.sh &
 Restart=on-failure
 
 [Install]
