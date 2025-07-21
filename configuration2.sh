@@ -15,7 +15,7 @@ sudo chmod a+x run_gps.sh
 sudo -s
 cd ../
 sudo chmod a+x startcam.sh
-mv startcam.sh /
+mv gps_service /
 mv autostart.service /etc/systemd/system
 cd /etc/systemd/system
 systemctl daemon-reload
