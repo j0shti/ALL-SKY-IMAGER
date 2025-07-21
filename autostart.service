@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable GPS Service at system-start
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/startcam.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
