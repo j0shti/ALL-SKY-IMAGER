@@ -13,4 +13,6 @@ mv startcam.sh /
 
 # create systemd service ot autostart gps service
 sudo -s
+mv /home/$user/ALL-SKY-IMAGER/autostart.service /etc/systemd/system
 cd /etc/systemd/system
+systemctl enable --now autostart.service
