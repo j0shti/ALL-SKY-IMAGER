@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MAX_TIME=120 # Time limit for checking the status of the DAEMONs after boot [seconds]
 MAX_SYNC_TIME=1200 # Time limit for checking the system time synchronization with the GPS time [seconds]
