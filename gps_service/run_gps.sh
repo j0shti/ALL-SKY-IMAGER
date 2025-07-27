@@ -9,7 +9,7 @@ LOG_PATH='/logs/'
 ENV_PATH='/gps_service/'
 PROGRAM=$ENV_PATH'startcam.sh'
 
-ST="$(date +%s)"
+ST=$(date +%s)
 
 while :
 do
@@ -23,7 +23,7 @@ do
   if [ "$STAT_GPSD" = 'active' ] && [ "$STAT_CHRONYD" = 'active' ] ; then
 #    echo sleep 10 seconds before run gpspipe
     sleep 10 # sleep 10 seconds before running gpspipe
-    ET='$(date +%s)'
+    ET=$(date +%s)
 #    echo 'Run gpspipe'
     echo 'Run gpspipe (gpsd: '$STAT_GPSD', chronyd: '$STAT_CHRONYD') in '$ELAPSED' sec after boot' >> ${LOG_PATH}'run_gps.log'
     gpspipe -dlr -o /dev/null
@@ -60,7 +60,7 @@ do
         sudo reboot
       fi
       sleep 10 # sleep 10 seconds before running gpspipe
-      ET='$(date +%s)'
+      ET=$(date +%s)
       ELAPSED=$(($ET-$ST))
 #      echo $ELAPSED
 #      echo 'Run gpspipe'
@@ -84,7 +84,7 @@ done
 
 # Checking Reach to achieve stable SYSTEM CLOCK
 echo Checking Reach to achieve stable SYSTEM CLOCK >> ${LOG_PATH}'run_gps.log'
-ST="$(date +%s)"
+ST=$(date +%s)
 SYNC_COUNT=0
 while :
 do
@@ -96,7 +96,7 @@ do
   fi
   REACH="$(chronyc sources | awk 'NR == 4 {print $5}')"
   echo '  Waiting for stable SYSTEM CLOCK (Reach='$REACH' / Elapsed time='$SYNC_COUNT' seconds)...' >> ${LOG_PATH}'run_gps.log'
-  ET="$(date +%s)"
+  ET=$(date +%s)
   ELAPSED=$(($ET-$ST))
   if [ $REACH -eq 377 ] ; then
     TIMESTAMP="$(date +'%F %T %Z')"
