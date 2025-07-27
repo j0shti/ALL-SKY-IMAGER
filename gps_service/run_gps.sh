@@ -15,12 +15,12 @@ while :
 do
   sleep 1 # sleep 1 second
   # Check the status of the DAEMONs (gpsd, chronyd)
-  ET="$(date +%s)"
+  ET=$(date +%s)
   ELAPSED=$(($ET-$ST))
   echo $ELAPSED > ${LOG_PATH}'run_gps.log'
   STAT_GPSD="$(systemctl is-active gpsd)"
   STAT_CHRONYD="$(systemctl is-active chronyd)"
-  if [ "$STAT_GPSD" = 'active' ] && [ "$STAT_GPSD" = 'active' ] ; then
+  if [ "$STAT_GPSD" = 'active' ] && [ "$STAT_CHRONYD" = 'active' ] ; then
 #    echo sleep 10 seconds before run gpspipe
     sleep 10 # sleep 10 seconds before running gpspipe
     ET='$(date +%s)'
@@ -52,7 +52,7 @@ do
         echo '[ERROR] Failed to start gpsd DAEMON manually [Start rebooting]' >> ${LOG_PATH}'run_gps.log'
         sudo reboot
       fi
-      if [ "STAT_CHRONYD" != 'active' ] ; then
+      if [ "$STAT_CHRONYD" != 'active' ] ; then
         sudo systemctl start chronyd
       fi
       if [ $? -ne 0 ] ; then
