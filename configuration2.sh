@@ -3,9 +3,9 @@ user=$(whoami)
 # finish NTPsec setup
 sudo apt install scons gcc clang asciidoctor m4 bison pkg-config libssl-dev gpsd gpsd-clients chrony -y
 
-sudo chmod a+x /home/$user/ALL-SKY-IMAGER/clockmaker
-cd /home/$user/ALL-SKY-IMAGER/
-./clockmaker --build
+#sudo chmod a+x /home/$user/ALL-SKY-IMAGER/clockmaker
+#cd /home/$user/ALL-SKY-IMAGER/
+#./clockmaker --build
 
 # enable gps service
 cd /home/$user/ALL-SKY-IMAGER/gps_service/
