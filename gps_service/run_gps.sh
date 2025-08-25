@@ -94,7 +94,7 @@ do
     echo '[ERROR] Failed to sync the SYSTEM CLOCK with the GPS time within '$(($MAX_SYNC_TIME/60))' minutes [Start rebooting]' >> ${LOG_PATH}'run_gps.log'
     sudo reboot
   fi
-  REACH="$(chronyc sources | awk 'NR == 4 {print $5}')"
+  REACH="$(chronyc sources | awk 'NR == 3 {print $5}')"
   echo '  Waiting for stable SYSTEM CLOCK (Reach='$REACH' / Elapsed time='$SYNC_COUNT' seconds)...' >> ${LOG_PATH}'run_gps.log'
   ET="$(date +%s)"
   ELAPSED=$(($ET-$ST))
