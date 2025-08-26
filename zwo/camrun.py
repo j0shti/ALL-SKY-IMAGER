@@ -76,9 +76,10 @@ import ephem
 import smbus
 from PIL import Image
 import os
+import pwd
 ####
 #### Directory settings
-user = os.getlogin()
+user = pwd.getpwuid(os.getuid()).pw_name
 out_paren_dir='/media/' # output file path
 log_dir='/logs/'
 log1=log_dir+'log_ASC_control.log' # logfile that errors are recorded mainly
