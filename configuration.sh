@@ -14,6 +14,7 @@ sudo apt install python3-numpy -y
 sudo apt install python3-ephem -y
 sudo apt install python3-smbus -y
 sudo apt install python3-pillow -y
+sudo apt install python3-pwd -y 
 
 # finish NTP gpsd setup
 sudo apt install gpsd gpsd-clients chrony -y
