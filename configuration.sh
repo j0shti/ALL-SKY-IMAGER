@@ -2,7 +2,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python-is-python3 -y
 
 # camera script setup
-user=$(whoami)
+user=$(id -un 1000)
 
 mkdir -p /home/$user/ALL-SKY-IMAGER/data
 sudo apt-get install bzip2 -y
