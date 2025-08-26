@@ -1,4 +1,4 @@
 #!/bin/bash
-user=$(whoami)
+user=$(id -un 1000)
 cd /home/$user/ALL-SKY-IMAGER/zwo/
-sudo python3 camrun.py
+python3 camrun.py
