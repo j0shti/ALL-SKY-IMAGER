@@ -261,7 +261,7 @@ site.lon=location['lon']
 ##
 
 ## Load the shared library into c types
-asi=c.CDLL("/home/" + user + "/ALL-SKY-IMAGER/zwo/ASI_linux_mac_SDK_V1.38/lib/armv8/libASICamera2.so")
+asi=c.CDLL("/home/lab/ALL-SKY-IMAGER/zwo/ASI_linux_mac_SDK_V1.38/lib/armv8/libASICamera2.so")
 
 numCam=asi.ASIGetNumOfConnectedCameras()
 print('## Number of Connected ZWO Cameras: {0}'.format(numCam)) # Get the number of the connected cameras
