@@ -471,12 +471,12 @@ while True: # This is non-escapable loop
                     img.save(out_full_dir+device_name+'_'+TIMESTAMP+Exp_tag+'.png') # Save image
 
                     ## write humidity and temp data
-                    log_file = open(out_full_dir + 'dailylog.txt', 'a+')
-                    log_file.write(
-                    TIMESTAMP + Exp_tag + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
-                    + str(humidity) + ' %RH' + '\n'
-                    )
-                    log_file.close()
+                    # log_file = open(out_full_dir + 'dailylog.txt', 'a+')
+                    # log_file.write(
+                    # TIMESTAMP + Exp_tag + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
+                    # + str(humidity) + ' %RH' + '\n'
+                    # )
+                    # log_file.close()
 
                     ## set autoexposure to adjust camera sensitivity
                     # os.system(' echo ' + str(autoexp().setexp(img, Exposure)))
