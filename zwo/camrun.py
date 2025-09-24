@@ -239,7 +239,7 @@ class autoexp:
         # if avg < -999:  # CHOOSE LOWER THRESHOLD
         #     exposure -= (5 * 10^6 )
 
-        return exposure
+        return Exposure
 
 ## Prepare body for ephem module
 site=ephem.Observer()
