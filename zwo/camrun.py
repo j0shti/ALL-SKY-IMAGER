@@ -224,32 +224,19 @@ class TEMPHUM:
 
 ## Class for Camera Autoexposure -- Joey's code
 class autoexp:
-    def setexp(self, image, exposure):
-        pixel_array = np.array(image)
-        height, width = pixel_array.shape
-        square_height = height // 5
-        square_width = width // 5
+    def setexp(im_file):
+        im = Image.open(im_file).convert('L')
+        stat = ImageStat.Stat(im)
+        avg = stat.mean[0]
 
-        max_avg = -1
-        max_coords = (0, 0)
+        log_file = open(out_full_dir + 'dailylog.txt', 'a+')
+        log_file.write("AVG LUMINANCE: " + avg + " - ")
+        log_file.close()
 
-        for i in range(5):
-            for j in range(5):
-                top = i * square_height
-                bottom = (i + 1) * square_height
-                left = j * square_width
-                right = (j + 1) * square_width
-                square = pixel_array[top:bottom, left:right]
-                avg = square.mean()
-                if avg > max_avg:
-                    max_avg = avg
-
-        os.system("echo " + max_avg + " is the current average of the image")
-
-        if max_avg > 999:  # CHOOSE UPPER THRESHOLD
-            exposure += ( 5 * 10^6 )
-        if max_avg < -999:  # CHOOSE LOWER THRESHOLD
-            exposure -= (5 * 10^6 )
+        # if avg > 999:  # CHOOSE UPPER THRESHOLD
+        #     exposure += ( 5 * 10^6 )
+        # if avg < -999:  # CHOOSE LOWER THRESHOLD
+        #     exposure -= (5 * 10^6 )
 
         return exposure
 
@@ -479,7 +466,7 @@ while True: # This is non-escapable loop
                     log_file.close()
 
                     ## set autoexposure to adjust camera sensitivity
-                    os.system(' echo ' + str(autoexp().setexp(img, Exposure)))
+                    os.system(' echo ' + str(autoexp().setexp(img)))
 
                     target_UT_UNIX=time.mktime(target_UT_time) + Interval # prepare UNIX time of the next target obs. time
                     target_UT_time=time.localtime(target_UT_UNIX) # Convert UNIX time of the next target obs. time to UT timestamp (tuple)
