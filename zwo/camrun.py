@@ -87,10 +87,10 @@ log1=log_dir+'log_ASC_control.log' # logfile that errors are recorded mainly
 
 #### Temperature settings
 
-# i2cbus = smbus.SMBus(1)
-# i2caddress = 0x40
-# tempaddress = 0x00
-# humaddress = 0x01
+i2cbus = smbus.SMBus(1)
+i2caddress = 0x40
+tempaddress = 0x00
+humaddress = 0x01
 
 ####
 ##########--------------------------------------------------------##########
