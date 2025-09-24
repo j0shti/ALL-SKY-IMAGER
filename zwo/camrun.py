@@ -231,7 +231,7 @@ class autoexp:
         avg = stat.mean[0]
 
         log_file = open(out_full_dir + 'dailylog.txt', 'a+')
-        log_file.write("AVG LUMINANCE: " + avg + " - ")
+        log_file.write("AVG LUMINANCE: " + str(avg) + " - ")
         log_file.close()
 
         # if avg > 999:  # CHOOSE UPPER THRESHOLD
