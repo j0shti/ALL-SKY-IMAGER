@@ -224,7 +224,7 @@ class TEMPHUM:
 
 ## Class for Camera Autoexposure -- Joey's code
 class autoexp:
-    def setexp(im_file):
+    def setexp(self, im_file):
         im = Image.open(im_file).convert('L')
         stat = ImageStat.Stat(im)
         avg = stat.mean[0]
