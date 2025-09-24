@@ -75,6 +75,7 @@ import numpy as np
 import ephem
 import smbus
 from PIL import Image
+from PIL import ImageStat
 import os
 import pwd
 ####
