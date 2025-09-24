@@ -370,18 +370,18 @@ while True: # This is non-escapable loop
     sun_alt=sun.alt*180/np.pi
     ##
 
-    # temperature = TEMPHUM().grabTemp()
-    # humidity = TEMPHUM().grabHum()
+    temperature = TEMPHUM().grabTemp()
+    humidity = TEMPHUM().grabHum()
 
-    # if (temperature > 80 or temperature < -40) or humidity > 80: # Check temperature and humidity conditions
-    #     log_file = open(out_full_dir + 'dailylog.txt', 'a+')
-    #     log_file.write(
-    #         TIMESTAMP + Exp_tag + '\t' + ' ERROR CONDITIONS ARE NOT SUITABLE FOR RUNNING' + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
-    #         + str(humidity) + ' %RH' + '\n')
-    #     log_file.close()
+    if (temperature > 80 or temperature < -40) or humidity > 80: # Check temperature and humidity conditions
+        log_file = open(out_full_dir + 'dailylog.txt', 'a+')
+        log_file.write(
+            TIMESTAMP + Exp_tag + '\t' + ' ERROR CONDITIONS ARE NOT SUITABLE FOR RUNNING' + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
+            + str(humidity) + ' %RH' + '\n')
+        log_file.close()
 
-    #     print('NOT SAFE FOR USAGE, RESTARTING')
-    #     os.system('sudo reboot')
+        print('NOT SAFE FOR USAGE, RESTARTING')
+        os.system('sudo reboot')
 
     if True: # Check observation condition
         print("Sun's elevation: GOOD ({0:6.2f} deg)".format(sun_alt))
@@ -470,13 +470,13 @@ while True: # This is non-escapable loop
                     os.makedirs(out_full_dir,exist_ok=True) # Make output directory
                     img.save(out_full_dir+device_name+'_'+TIMESTAMP+Exp_tag+'.png') # Save image
 
-                    ## write humidity and temp data
-                    # log_file = open(out_full_dir + 'dailylog.txt', 'a+')
-                    # log_file.write(
-                    # TIMESTAMP + Exp_tag + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
-                    # + str(humidity) + ' %RH' + '\n'
-                    # )
-                    # log_file.close()
+                    # write humidity and temp data
+                    log_file = open(out_full_dir + 'dailylog.txt', 'a+')
+                    log_file.write(
+                    TIMESTAMP + Exp_tag + '\t' + '- TEMP / HUM: ' + str(temperature) + '° C / '
+                    + str(humidity) + ' %RH' + '\n'
+                    )
+                    log_file.close()
 
                     ## set autoexposure to adjust camera sensitivity
                     # os.system(' echo ' + str(autoexp().setexp(img, Exposure)))
