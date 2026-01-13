@@ -39,6 +39,11 @@ cd /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable --now autostart.service
 
+# turn off active, pwr, and ETH lEDs
+cd /boot/firmware
+sudo mv /boot/firmware/config.txt /boot/firmware/config.txt.old
+sudo mv config.txt /boot/firmware/config.txt
+
 # restart system
 echo "configuration complete--rebooting"
 sudo reboot
