@@ -22,6 +22,11 @@ sudo apt install gpsd gpsd-clients chrony -y
 cp -f chrony.conf /etc/chrony/chrony.conf
 cp -f gpsd /etc/default/gpsd
 
+# enable auto mounting for media directories
+sudo apt install autofs
+echo "/media   -fstype=auto,rw   :/dev/disk/by-label/photodrive" | sudo tee /etc/auto.swappable
+sudo sed -i '$i /-    /etc/auto.swappable --timeout=10 --ghost\n' /etc/auto.master
+
 # set up sys dirs for scripts
 cd /home/$user/ALL-SKY-IMAGER/gps_service/
 sudo chmod a+x run_gps.sh
