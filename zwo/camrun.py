@@ -371,7 +371,7 @@ while True: # This is non-escapable loop
         print('NOT SAFE FOR USAGE, RESTARTING')
         os.system('sudo reboot')
 
-    if True: # Check observation condition
+    if sun_alt <= alt_cutoff: # Check observation condition
         print("Sun's elevation: GOOD ({0:6.2f} deg)".format(sun_alt))
         wait_time=(target_UT_UNIX - time.time())
         if wait_time > 1:
